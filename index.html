@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aziz-e-Millat School - Fee Management System</title>
-  <link rel="stylesheet" href="https://webdevemaster.github.io/Aziz-e-Millat-School/output.css">
+  <link rel="stylesheet" href="src/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
@@ -760,14 +760,15 @@
                     </div>
                 </div>
 
+                
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h2 style="font-size: medium;" class=" font-semibold text-blue-800 mb-6">Contact Information</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
                             <h3 class="text-xl font-medium text-blue-800 mb-4">Address</h3>
-                            <p style="font-size: small;" class="text-gray-700 mb-2">123 Education Road,</p>
-                            <p style="font-size: small;" class="text-gray-700 mb-2">Model Town,</p>
-                            <p style="font-size: small;" class="text-gray-700 mb-6">Lahore, Pakistan</p>
+                            <p style="font-size: small;" class="text-gray-700 mb-2">Sector 15-b,</p>
+                            <p style="font-size: small;" class="text-gray-700 mb-2">Orangi Town,</p>
+                            <p style="font-size: small;" class="text-gray-700 mb-6">Karachi, Pakistan</p>
 
                             <h3 class="text-xl font-medium text-blue-800 mb-4">Contact Details</h3>
                             <p style="font-size: small;" class="text-gray-700 mb-2"><span class="font-semibold">Phone:</span> +92-42-1234567</p>
@@ -2940,7 +2941,7 @@
 
                 document.getElementById('view-student-name').textContent = student.name || "Unknown";
                 document.getElementById('view-student-id').textContent = `ID: ST-2023-${rollNumber}`;
-                document.getElementById('view-student-class').textContent = `Class ${className}`;
+                document.getElementById('view-student-class').textContent = (className == 0 || className === "0") ? "Montessori" : "Class " + className;
                 document.getElementById('view-student-roll').textContent = rollNumber;
                 document.getElementById('view-student-parent').textContent = student.parentName || "Unknown";
                 document.getElementById('view-student-contact').textContent = student.contactNumber || "Unknown";
@@ -3681,10 +3682,19 @@
                 const feesTable = document.querySelector('#view-student-modal table tbody');
                 feesTable.innerHTML = '';
                 let pending_classesCount = 0;
+                
+                // Calculate totals
+                let totalPaid = 0;
+                let totalPending = 0;
+
                 // Filter and sort fees
                 const paidFees = feesHistory
                     .filter(fee => fee.status === "Paid" | fee.status === "Unpaid")
                     .sort((a, b) =>{ 
+                        if(a.status === "Paid")
+                            totalPaid += parseFloat(a.amount || "0");
+                        else
+                            totalPending += parseFloat(a.amount || "0");
                         const classA = parseInt(a.class_number || "0");
                         const classB = parseInt(b.class_number || "0");
                         if (classA !== classB) {
@@ -3693,22 +3703,6 @@
                         }
                         return new Date(b.payDate || b.dueDate) - new Date(a.payDate || a.dueDate);
                     }).reverse();
-
-                const unpaidFees = feesHistory
-                    .filter(fee => fee.status === "_Unpaid" || !fee.status)
-                    .sort((a, b) =>{ 
-                        const classA = parseInt(a.class_number || "0");
-                        const classB = parseInt(b.class_number || "0");
-                        if (classA !== classB) {
-                            pending_classesCount += 1;
-                            return classA - classB;
-                        }
-                        return new Date(b.dueDate) - new Date(a.dueDate);
-                    });
-
-                    // Calculate totals
-                const totalPaid = paidFees.reduce((sum, fee) => sum + fee.amount, 0);
-                const totalPending = unpaidFees.reduce((sum, fee) => sum + fee.amount, 0);
 
                 // Update summary amounts
                 const paidSummary = document.querySelector('#view-student-modal .bg-green-50 .font-semibold');
@@ -3719,7 +3713,7 @@
 
                 // Add rows to the table - show both paid and unpaid fees
                 // Show all fees, but sort with paid fees first, then unpaid
-                const allFees = [...unpaidFees, ...paidFees];
+                const allFees = [...paidFees];
 
                 if (allFees.length === 0) {
                     const row = document.createElement('tr');
@@ -3737,7 +3731,7 @@
                             const row2 = document.createElement('tr');
                             row2.style.backgroundColor = "#6b6b6b"; // Light gray background for class header
                             row2.innerHTML = `
-                                <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs" style="color:white;">Class ${fee.class_number}</b></td>
+                                <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs" style="color:white;">${fee.class_number == 0 || fee.class_number === "0" ? "Montessori" : "Class " + fee.class_number}</b></td>
                                 <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs"> </td>
                                 <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs"> </td>
                                 <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs"> </td>
@@ -3778,7 +3772,7 @@
                         if (student) {
                             // Update student details in the modal
                             document.getElementById('view-student-name').textContent = student.name;
-                            document.getElementById('view-student-class').textContent = student.class;
+                            document.getElementById('view-student-class').textContent = (student.class == 0 || student.class === "0") ? "Montessori" : "Class " + student.class;
                             document.getElementById('view-student-roll').textContent = student.rollNumber;
                             document.getElementById('view-student-parent').textContent = student.parentName;
                             document.getElementById('view-student-contact').textContent = student.contactNumber;
