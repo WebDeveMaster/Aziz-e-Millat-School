@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aziz-e-Millat School - Fee Management System</title>
-  <link rel="stylesheet" href="https://webdevemaster.github.io/Aziz-e-Millat-School/output.css">
+    <link rel="stylesheet" href="https://webdevemaster.github.io/Aziz-e-Millat-School/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
@@ -429,179 +429,183 @@
                             <div style="height: 22px;"></div>
                         </div>
                     </div>
-
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                     <!-- Pending Fees Section -->
-                    <h3 class="font-semibold text-blue-800 mb-6" style="margin-bottom: 3px;">Pending Fees</h3>
-                    <p style="font-size: 80%;">After Due Date you have need to pay extra</p>
-                    <p style="font-size: 80%;"><b id="extra-paying-pkr">100</b> PKR</p>
-                    <hr>
-                    <div style="height: 20px;"></div>
+                    <div style="max-width: 500px; margin-bottom: 50px;">
+                        <h3 class="font-semibold text-blue-800 mb-6" style="margin-bottom: 3px;">Pending Fees</h3>
+                        <p style="font-size: 80%;">After Due Date you have need to pay extra</p>
+                        <p style="font-size: 80%;"><b id="extra-paying-pkr">100</b> PKR</p>
+                        <hr>
+                        <div style="height: 20px;"></div>
 
-                    <div class="overflow-x-auto mb-4 sm:mb-6 bg-gray-100 rounded-lg" style="padding: 3px;">
-                        <table class="min-w-full bg-white" id="pending-table">
-                            <thead  style="height: 40px;">
-                                <tr>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Select</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Due Date</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Purpose</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Amount</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Status</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
-                                        <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="5000"
-                                            data-fee-id="1" data-purpose="Monthly Fee (January)"
-                                            data-due-date="2023-01-10">
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-01-2023</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee (January)
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">5,000
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
-                                        <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="2500"
-                                            data-fee-id="2" data-purpose="Computer Lab Fee" data-due-date="2023-01-15">
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">15-01-2023</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Computer Lab Fee</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">2,500
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
-                                        <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="1500"
-                                            data-fee-id="3" data-purpose="Exam Fee" data-due-date="2023-01-20">
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">20-01-2023</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Exam Fee</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">1,500
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
-                                        <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="5000"
-                                            data-fee-id="4" data-purpose="Monthly Fee (February)"
-                                            data-due-date="2023-02-10">
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-02-2023</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee
-                                        (February)</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">5,000
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="mt-4 flex flex-col sm:flex-row justify-between items-center bg-blue-50 p-3 rounded-lg">
-                        <div class="mb-3 sm:mb-0 text-center sm:text-left">
-                            <span class="font-bold text-sm sm:text-base" style="font-size: small;">Total Selected: </span>
-                            <span id="total-amount" class="font-bold text-base sm:text-lg text-blue-800" style="font-size: small;">0</span> <span
-                                class="font-bold text-sm sm:text-base" style="font-size: small;">PKR</span>
-
-                            <!-- <span id="total-amount-afterDue" class="font-bold text-base sm:text-lg text-red-800" style="font-size: small;">+ ₹100 late fee</span> -->
+                        <div class="overflow-x-auto mb-4 sm:mb-6 bg-gray-100 rounded-lg" style="padding: 3px;">
+                            <table class="min-w-full bg-white" id="pending-table">
+                                <thead  style="height: 40px;">
+                                    <tr>
+                                        <th
+                                            class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                            Select</th>
+                                        <th
+                                            class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                            Due Date</th>
+                                        <th
+                                            class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                            Purpose</th>
+                                        <th
+                                            class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                            Amount</th>
+                                        <th
+                                            class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                            Status</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
+                                            <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="5000"
+                                                data-fee-id="1" data-purpose="Monthly Fee (January)"
+                                                data-due-date="2023-01-10">
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-01-2023</td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee (January)
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">5,000
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
+                                            <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="2500"
+                                                data-fee-id="2" data-purpose="Computer Lab Fee" data-due-date="2023-01-15">
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">15-01-2023</td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Computer Lab Fee</td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">2,500
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
+                                            <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="1500"
+                                                data-fee-id="3" data-purpose="Exam Fee" data-due-date="2023-01-20">
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">20-01-2023</td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Exam Fee</td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">1,500
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
+                                            <input type="checkbox" class="fee-checkbox w-4 h-4" data-amount="5000"
+                                                data-fee-id="4" data-purpose="Monthly Fee (February)"
+                                                data-due-date="2023-02-10">
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-02-2023</td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee
+                                            (February)</td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs font-medium">5,000
+                                        </td>
+                                        <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                class="px-1 py-0.5 text-xs rounded-full bg-yellow-100 text-yellow-800">Unpaid</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <button id="pay-now-btn"
-                            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto text-sm"
-                            disabled
-                            style="font-size: small;">
-                            Pay Now
-                        </button>
+
+                        <div class="mt-4 flex flex-col sm:flex-row justify-between items-center bg-blue-50 p-3 rounded-lg">
+                            <div class="mb-3 sm:mb-0 text-center sm:text-left">
+                                <span class="font-bold text-sm sm:text-base" style="font-size: small;">Total Selected: </span>
+                                <span id="total-amount" class="font-bold text-base sm:text-lg text-blue-800" style="font-size: small;">0</span> <span
+                                    class="font-bold text-sm sm:text-base" style="font-size: small;">PKR</span>
+
+                                <!-- <span id="total-amount-afterDue" class="font-bold text-base sm:text-lg text-red-800" style="font-size: small;">+ ₹100 late fee</span> -->
+                            </div>
+                            <button id="pay-now-btn"
+                                class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto text-sm"
+                                disabled
+                                style="font-size: small;">
+                                Pay Now
+                            </button>
+                        </div>
                     </div>
-                    <div style="height: 50px;"></div>
                     <!-- Paid Fees History Section -->
-                    <h3 class="font-semibold text-blue-800 mb-6" style="margin-bottom: 7px;">Paid Fees History</h3>
-                    <div class="overflow-x-auto mb-4 bg-gray-50 rounded-lg"> 
-                        <div class="max-h-[400px] overflow-y-auto border border-gray-200 rounded-md">
-                            <table class="min-w-full bg-white" id="paid-table">
-                            <thead  class="sticky top-0 bg-gray-50 z-10" style="height: 40px;">
-                                <tr>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Pay Date</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Due Date</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Purpose</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Amount</th>
-                                    <th
-                                        class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">05-12-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">01-12-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee
-                                        (December)</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">5,000</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-11-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">05-11-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee
-                                        (November)</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">5,000</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">15-10-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-10-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Exam Fee</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">1,500</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">03-10-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">01-10-2022</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee (October)
-                                    </td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">5,000</td>
-                                    <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
-                                            class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div style="max-width: 500px;">
+                        <h3 class="font-semibold text-blue-800 mb-6" style="margin-bottom: 7px;">Paid Fees History</h3>
+                        <div class="overflow-x-auto mb-4 bg-gray-100 rounded-lg" style="padding: 3px;"> 
+                            <div class="max-h-[400px] overflow-y-auto border border-gray-200 rounded-md">
+                                <table class="min-w-full bg-white" id="paid-table">
+                                    <thead  class="sticky top-0 bg-gray-50 z-10" style="height: 40px;">
+                                        <tr>
+                                            <th
+                                                class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Pay Date</th>
+                                            <th
+                                                class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Due Date</th>
+                                            <th
+                                                class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Purpose</th>
+                                            <th
+                                                class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Amount</th>
+                                            <th
+                                                class="py-1 px-1 sm:px-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">05-12-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">01-12-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee
+                                                (December)</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">5,000</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                    class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-11-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">05-11-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee
+                                                (November)</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">5,000</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                    class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">15-10-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">10-10-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Exam Fee</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">1,500</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                    class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">03-10-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">01-10-2022</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">Monthly Fee (October)
+                                            </td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200 text-xs">5,000</td>
+                                            <td class="py-2 px-1 sm:px-3 border-b border-gray-200"><span
+                                                    class="px-1 py-0.5 text-xs rounded-full bg-green-100 text-green-800">Paid</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     </div>
                 </div>
@@ -982,7 +986,7 @@
                         </div>
                         
                         <div style="height: 20px;"></div>
-                        <button id="add-new-fees-btn"
+                        <button id="save-monthly-set-btn"
                             class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 flex items-center justify-center"
                             style="font-size: 100%;">
                             Save Setting
@@ -993,7 +997,7 @@
                             </svg>
                         </button>
                         <div style="height: 10px;"></div>
-                        <button id="add-new-fees-btn"
+                        <button id="revert-monthly-set-btn"
                             class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 flex items-center justify-center"
                             style="font-size: 100%;">
                             Revert / Refresh Setting
@@ -1038,7 +1042,7 @@
                                         placeholder="Class...">
                                     </td>
                                     <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
-                                        <input id="custome-fees-DueDate" type="text"
+                                        <input id="custome-fees-DueDate" type="date"
                                         class="shadow appearance-none border rounded w-full py-2 pl-2 pr-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                         placeholder="Due Date...">
                                     </td>
@@ -1077,7 +1081,7 @@
                                     <td class="py-2 px-1 sm:px-3 border-b border-gray-200"></td>
                                     <td class="py-2 px-1 sm:px-3 border-b border-gray-200">
                                         
-                                        <button id="add-new-fees-btn"
+                                        <button id="remove-all-new-fees-btn"
                                             class="bg-red-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 flex items-center justify-center"
                                             style="font-size: 100%;">
                                             Remove All Custome Fees
@@ -3046,13 +3050,58 @@
                         alert("Successful Added new Student");
                         
                         console.log("Status: "+result.status);
+//////////////////////////////////////////////////////////////
 
+                        
+                    // More specific selector to find the student management table
+                    const studentsTable = document.querySelector('#dashboard .student-management-table tbody');
+
+                    const feesHistory = [];
+                    // Calculate pending and paid amounts
+                    let pendingFees = 0;
+                    let paidFees = 0;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="py-2 px-4 border-b border-gray-200">${student_name || ""}</td>
+                        <td class="py-2 px-4 border-b border-gray-200">${student_class}</td>
+                        <td class="py-2 px-4 border-b border-gray-200">${student_roll}</td>
+                        <td class="py-2 px-4 border-b border-gray-200">${student_parent || ""}</td>
+                        <td class="py-2 px-4 border-b border-gray-200">${student_contact || ""}</td>
+                        <td class="py-2 px-4 border-b border-gray-200">₨ ${formatAmount(pendingFees)}</td>
+                        <td class="py-2 px-4 border-b border-gray-200">₨ ${formatAmount(paidFees)}</td>
+                        <td class="py-2 px-4 border-b border-gray-200">
+                            <button class="text-blue-600 hover:text-blue-900 mr-2 view-student-btn" data-student-id="${student_roll}">View</button>
+                            <button class="text-green-600 hover:text-green-900 edit-student-btn" data-student-id="${student_roll}">Edit</button>
+                        </td>
+                    `;
+                    studentsTable.insertBefore(row, studentsTable.firstChild);
+
+                    // Store student data for later use
+                    let student = {
+                        name: student_name,
+                        class_number: student_class,
+                        roll_number: student_roll,
+                        parentName: student_parent,
+                        contactNumber: student_contact,
+                        address: student_address,
+                        FeesHistory: feesHistory
+                    };
+                    row.querySelector('.view-student-btn').addEventListener('click', function () {
+                        showStudentDetails(student);
+                    });
+
+                    row.querySelector('.edit-student-btn').addEventListener('click', function () {
+                        showEditStudentForm(student);
+                    });
+
+
+
+// /////////////////////////////////////////////
                         // Load all students data when dashboard is opened
-                        loadAllStudentsData();
-                        // Load monthly income data
-                        loadDetailedMonthlyIncomeData();
-                        loadCustomeFeesData();
-                        loadAllMonthlyFeesData();
+                        // loadAllStudentsData();
+                        addStudentModal.classList.add('hidden');
+                        
                         return true;
                     }
                 } catch (apiError) {
@@ -3066,27 +3115,6 @@
                 alert('Student added successfully!');
             });
 
-            // Search functionality
-            // const searchStudent = document.getElementById('search-student');
-            // const studentTableRows = document.querySelectorAll('.student-management-table tbody tr');
-
-            // searchStudent.addEventListener('input', function () {
-            //     const term = this.value.trim().toLowerCase();
-
-            //     studentTableRows.forEach(row => {
-            //         const name = row.cells[0].textContent.trim().toLowerCase();
-            //         const studentClass = row.cells[1].textContent.trim().toLowerCase();
-            //         const roll = row.cells[2].textContent.trim().toLowerCase();
-
-            //         if (name.includes(term) || studentClass.includes(term) || roll.includes(term)) {
-            //             row.style.display = ''; // show
-            //         } else {
-            //             row.style.display = 'none'; // hide
-            //         }
-            //         console.log('Search for:', this.value , "name",name);
-            //     });
-            //     console.log('Searching for:', this.value);
-            // });
             
             // Search functionality
             document.getElementById('search-student-name').addEventListener('keyup', function() {
@@ -3121,15 +3149,6 @@
                 });
                 console.log('Searching for:', document.getElementById('search-student-name').value);
             }
-
-
-
-
-
-
-
-
-
 
             // View and Edit Student functionality
             const viewStudentBtns = document.querySelectorAll('.view-student-btn');
@@ -3437,37 +3456,55 @@
                 const admin_password = localStorage.getItem("admin-password");
                 document.querySelectorAll('.customeFees-remove-btn').forEach(btn => {
                     btn.addEventListener('click', async function () {
-                        alert("Sorry Maddam or Sir, This feature is not implemented yet.");
-                        const recordId = this.dataset.id;
+                        // alert("Sorry Maddam or Sir, This feature is not implemented yet.");
+                        
+                        const record_Id = this.dataset.id;
                         const classNumber = this.dataset.class;
                         const dueDate = this.dataset.date;
                         const purpose = this.dataset.purpose; 
                         const amount = this.dataset.amount;
 
-                        try {
-                            const response = await fetch(`${BASE_URL}/removeCustomeFees`, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    admin_userName: admin_userName,
-                                    admin_password: admin_password,
-                                    recordId: recordId
-                                }),
-                            });
+                        /////////////////
+                        const rows = document.querySelectorAll('#new-fees-table tr');
+                        
+                        rows.forEach(row => {
+                            const recordId = row.cells[0].textContent.toLowerCase();
+                            const studentClass = row.cells[1].textContent.toLowerCase();
+                            
+                            if (studentClass == classNumber
+                            &&  recordId == record_Id) {
 
-                            const result = await response.json();
-
-                            if (result.status === "success") {
-                                console.log("Successfully removed Custome Fees record: " + recordId);
-                                loadCustomeFeesData(); // reload data
-                            } else {
-                                alert('Invalid admin credentials or failed to delete.');
+                                row.style.display = 'none';
                             }
-                        } catch (apiError) {
-                            console.log("API fetch failed:", apiError);
-                        }
+                            console.log('Search for:', recordId , "recordId",recordId);
+                        });
+                        return;
+                        ////////////////////////////
+
+                        // try {
+                        //     const response = await fetch(`${BASE_URL}/removeCustomeFees`, {
+                        //         method: 'POST',
+                        //         headers: {
+                        //             'Content-Type': 'application/json'
+                        //         },
+                        //         body: JSON.stringify({
+                        //             admin_userName: admin_userName,
+                        //             admin_password: admin_password,
+                        //             recordId: recordId
+                        //         }),
+                        //     });
+
+                        //     const result = await response.json();
+
+                        //     if (result.status === "success") {
+                        //         console.log("Successfully removed Custome Fees record: " + recordId);
+                        //         loadCustomeFeesData(); // reload data
+                        //     } else {
+                        //         alert('Invalid admin credentials or failed to delete.');
+                        //     }
+                        // } catch (apiError) {
+                        //     console.log("API fetch failed:", apiError);
+                        // }
                     });
                 });
             }
@@ -3547,7 +3584,83 @@
                 // });
             }
             
+////////////////// 
 
+            document.getElementById('add-new-fees-btn').addEventListener('click', function() {
+                let Class = document.getElementById("custome-fees-Class").value
+                const DueDate = document.getElementById("custome-fees-DueDate").value
+                const Purpose = document.getElementById("custome-fees-Purpose").value
+                const Ammount = document.getElementById("custome-fees-Ammount").value
+                if(Class == "" ||
+                   DueDate == ""
+                || Purpose == ""
+                || Ammount == ""){
+
+                    alert("Please fill all fields before adding a new fee record.");
+                    return;
+                } 
+                // If Class contains commas, split and trim to create a list
+                if (Class.includes(',')) {
+                    Class = Class.split(',').map(c => c.trim());
+                }
+                const tableBody = document.querySelector('#new-fees-table tbody');
+                const row = document.createElement('tr');
+
+
+                const recordId = Math.random() * (9999 - 1000) + 1000; 
+
+                row.innerHTML = `
+                    <td class="py-2 px-4 border-b border-gray-200">${recordId}</td>
+                    <td class="py-2 px-4 border-b border-gray-200">${Class}</td>
+                    <td class="py-2 px-4 border-b border-gray-200">${formatDate(DueDate)}</td>
+                    <td class="py-2 px-4 border-b border-gray-200">${Purpose}</td>
+                    <td class="py-2 px-4 border-b border-gray-200">${formatAmount(Ammount)}</td>
+
+                    <td class="py-2 px-4 border-b border-gray-200">
+                        <button class="customeFees-remove-btn bg-red-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 flex items-center justify-center"
+                            style="font-size: 80%; height: 25px;"
+                            data-id="${recordId}"
+                            data-class="${Class}"
+                            data-date="${DueDate}"
+                            data-purpose="${Purpose}"
+                            data-amount="${Ammount}">
+                            Remove
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+                
+                row.querySelector('.customeFees-remove-btn').addEventListener('click', function () {
+                    // alert("Sorry Maddam or Sir, This feature is not implemented yet.");
+                    
+                    const record_Id = this.dataset.id;
+                    const classNumber = this.dataset.class;
+                    const dueDate = this.dataset.date;
+                    const purpose = this.dataset.purpose; 
+                    const amount = this.dataset.amount;
+
+                    /////////////////
+                    const rows = document.querySelectorAll('#new-fees-table tr');
+                    
+                    rows.forEach(row => {
+                        const recordId = row.cells[0].textContent.toLowerCase();
+                        const studentClass = row.cells[1].textContent.toLowerCase();
+                        
+                        if (studentClass == classNumber
+                        &&  recordId == record_Id) {
+
+                            row.style.display = 'none';
+                        }
+                        console.log('Search for:', recordId , "recordId",recordId);
+                    });
+                    return;
+                });
+                document.getElementById("custome-fees-Class").value = '';
+                document.getElementById("custome-fees-DueDate").value = '';
+                document.getElementById("custome-fees-Purpose").value = '';
+                document.getElementById("custome-fees-Ammount").value = '';
+                alert('New fee record added successfully!');
+            });
 
             let isAdminLoggedIn = localStorage.getItem('adminLoggedIn', 'true');
 
@@ -3632,18 +3745,6 @@
                     console.log("API fetch failed, using mock data instead:", apiError);
                 }
             });
-            // Load dashboard data when admin dashboard page is shown
-            // document.querySelectorAll('.nav-link').forEach(link => {
-            //     if (link.getAttribute('data-page') === 'dashboard') {
-            //         link.addEventListener('click', function () {
-            //             // Load all students data when dashboard is opened
-            //             loadAllStudentsData();
-            //             // Load monthly income data
-            //             loadDetailedMonthlyIncomeData();
-            // loadCustomeFeesData();
-            //         });
-            //     }
-            // });
 
             // Also load dashboard data when the page loads if dashboard is active
             if (document.getElementById('dashboard').classList.contains('active-page')) {
@@ -3762,14 +3863,16 @@
                     });
                 }
             }
-            function GettingDatas(){
                 // Open view student modal
                 viewStudentBtns.forEach(btn => {
                     btn.addEventListener('click', function () {
                         const studentId = this.getAttribute('data-student-id');
 
                         // For this demo, we'll use the student data from login if available
-                        if (student) {
+                        
+                            console.log("View Student 1");
+                            if (student) {
+                            console.log("View Student 2");
                             // Update student details in the modal
                             document.getElementById('view-student-name').textContent = student.name;
                             document.getElementById('view-student-class').textContent = (student.class == 0 || student.class === "0") ? "Montessori" : "Class " + student.class;
@@ -3792,7 +3895,10 @@
                         const studentId = this.getAttribute('data-student-id');
 
                         // For this demo, we'll use the student data from login if available
+                        
+                        console.log("Edit Student 11");
                         if (student) {
+                            console.log("Edit Student ");
                             // Populate form fields with student data
                             document.getElementById('edit-name').value = student.name;
                             document.getElementById('edit-class').value = student.class;
@@ -3864,16 +3970,15 @@
                         }
 
                         if (result.status === "success") {
-                            alert("Successful Edit new Student");
+                            alert("Successful Edit new Student.");
                             
                             console.log("Status: "+result.status);
 
                             // Load all students data when dashboard is opened
                             loadAllStudentsData();
-                            // Load monthly income data
-                            loadDetailedMonthlyIncomeData();
-                            loadCustomeFeesData();
-                            loadAllMonthlyFeesData();
+                            
+                            viewStudentModal.classList.add('hidden');
+                            editStudentModal.classList.add('hidden');
                             return true;
                         }
                     } catch (apiError) {
@@ -3886,7 +3991,7 @@
                     // Show success message (could be implemented with a toast notification)
                     alert('Student information updated successfully!');
                 });
-            }
+            // }
         });
     </script>
     <!--  -->
