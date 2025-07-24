@@ -3607,7 +3607,7 @@
                 const row = document.createElement('tr');
 
 
-                const recordId = Math.random() * (9999 - 1000) + 1000; 
+                const recordId = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
 
                 row.innerHTML = `
                     <td class="py-2 px-4 border-b border-gray-200">${recordId}</td>
