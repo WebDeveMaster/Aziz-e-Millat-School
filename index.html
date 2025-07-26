@@ -1735,6 +1735,7 @@
             let student = null;
             let adminLogin_student = false;
             let selectedFees = [];
+            let isFeesTableEmpty = false;
             
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -3410,7 +3411,8 @@
             }
             // Update the monthly income table with data
             function updateCustomeFeesTable(customeFeesData) {
-                if (!customeFeesData || !Array.isArray(customeFeesData) || customeFeesData.length === 0) {
+                // if (!customeFeesData || !Array.isArray(customeFeesData) || customeFeesData.length === 0) {
+                if(true){
                     const tableBody = document.querySelector('#new-fees-table tbody');
                     tableBody.innerHTML = `
                         <tr>
@@ -3419,12 +3421,14 @@
                             </td>
                         </tr>
                     `;
+                    isFeesTableEmpty = true;
                     return;
                 }
-
+                
                 const tableBody = document.querySelector('#new-fees-table tbody');
                 tableBody.innerHTML = ''; // Clear existing rows
-
+                isFeesTableEmpty = false;
+                
                 customeFeesData.forEach(customeFees => {
                     const row = document.createElement('tr');
 
@@ -3515,7 +3519,7 @@
                     tableBody.innerHTML = `
                         <tr>
                             <td colspan="6" class="py-4 px-4 border-b border-gray-200 text-center text-gray-500">
-                                No Custome Fees data available
+                                No Monthly Fees data available
                             </td>
                         </tr>
                     `;
@@ -3605,6 +3609,10 @@
                 }
                 const tableBody = document.querySelector('#new-fees-table tbody');
                 const row = document.createElement('tr');
+                if(isFeesTableEmpty){
+                    tableBody.innerHTML = ''; // Clear existing rows
+                    isFeesTableEmpty = false;
+                }
 
 
                 const recordId = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
